@@ -1,0 +1,689 @@
+{
+  "columns": {
+    "Compound": {
+      "categorical_signal_variance": 0.011203096068170909,
+      "combined_nunique": 5,
+      "dtype": "object",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_by_value": [
+        {
+          "Compound": "WET",
+          "count": 1355,
+          "mean": 0.025092250922509225
+        },
+        {
+          "Compound": "MEDIUM",
+          "count": 211141,
+          "mean": 0.10113147138641951
+        },
+        {
+          "Compound": "INTERMEDIATE",
+          "count": 17382,
+          "mean": 0.15228397192497986
+        },
+        {
+          "Compound": "SOFT",
+          "count": 38744,
+          "mean": 0.1934751187280611
+        },
+        {
+          "Compound": "HARD",
+          "count": 170518,
+          "mean": 0.3275372687927374
+        }
+      ],
+      "test_nunique": 5,
+      "train_nunique": 5
+    },
+    "Cumulative_Degradation": {
+      "combined_nunique": 172744,
+      "dtype": "float64",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_corr": -0.16740087384548913,
+      "test_mean": -25.849490548251772,
+      "test_nunique": 86823,
+      "test_std": 54.92026881240456,
+      "train_mean": -25.721758739044294,
+      "train_nunique": 142701,
+      "train_std": 54.7665728489995
+    },
+    "Driver": {
+      "categorical_signal_variance": 0.0029119108019103348,
+      "combined_nunique": 887,
+      "dtype": "object",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_by_value": [
+        {
+          "Driver": "SAI",
+          "count": 1373,
+          "mean": 0.3080844865258558
+        },
+        {
+          "Driver": "MAG",
+          "count": 1036,
+          "mean": 0.3108108108108108
+        },
+        {
+          "Driver": "BOT",
+          "count": 1085,
+          "mean": 0.3142857142857143
+        },
+        {
+          "Driver": "TSU",
+          "count": 1425,
+          "mean": 0.3192982456140351
+        },
+        {
+          "Driver": "ALB",
+          "count": 1346,
+          "mean": 0.32169390787518576
+        },
+        {
+          "Driver": "HAM",
+          "count": 1358,
+          "mean": 0.33726067746686306
+        },
+        {
+          "Driver": "GAS",
+          "count": 1385,
+          "mean": 0.340072202166065
+        },
+        {
+          "Driver": "LEC",
+          "count": 1457,
+          "mean": 0.34454358270418667
+        },
+        {
+          "Driver": "OCO",
+          "count": 1417,
+          "mean": 0.3549752999294284
+        },
+        {
+          "Driver": "RUS",
+          "count": 1393,
+          "mean": 0.3560660445082556
+        },
+        {
+          "Driver": "VER",
+          "count": 1484,
+          "mean": 0.3564690026954178
+        },
+        {
+          "Driver": "BOR",
+          "count": 446,
+          "mean": 0.38789237668161436
+        },
+        {
+          "Driver": "ALO",
+          "count": 1386,
+          "mean": 0.39321789321789324
+        },
+        {
+          "Driver": "BEA",
+          "count": 555,
+          "mean": 0.4
+        },
+        {
+          "Driver": "LAT",
+          "count": 401,
+          "mean": 0.40399002493765584
+        },
+        {
+          "Driver": "ANT",
+          "count": 417,
+          "mean": 0.41007194244604317
+        },
+        {
+          "Driver": "STR",
+          "count": 1275,
+          "mean": 0.42745098039215684
+        },
+        {
+          "Driver": "HAD",
+          "count": 435,
+          "mean": 0.46206896551724136
+        },
+        {
+          "Driver": "MSC",
+          "count": 355,
+          "mean": 0.4732394366197183
+        },
+        {
+          "Driver": "VET",
+          "count": 359,
+          "mean": 0.5654596100278552
+        }
+      ],
+      "test_nunique": 801,
+      "train_nunique": 887
+    },
+    "LapNumber": {
+      "combined_nunique": 78,
+      "dtype": "int64",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_corr": 0.267056977409292,
+      "test_mean": 23.050184678340816,
+      "test_nunique": 77,
+      "test_std": 17.002292449080695,
+      "train_mean": 23.105909277223663,
+      "train_nunique": 78,
+      "train_std": 16.958261456189174
+    },
+    "LapTime (s)": {
+      "combined_nunique": 40565,
+      "dtype": "float64",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_corr": -0.03409587298109392,
+      "test_mean": 90.98686850206754,
+      "test_nunique": 30286,
+      "test_std": 20.85524769715617,
+      "train_mean": 90.9487345997859,
+      "train_nunique": 37719,
+      "train_std": 19.7727688962602
+    },
+    "LapTime_Delta": {
+      "combined_nunique": 65243,
+      "dtype": "float64",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_corr": -0.004946489026378309,
+      "test_mean": -3.577802401840405,
+      "test_nunique": 40673,
+      "test_std": 40.34846648388721,
+      "train_mean": -3.7700404794469415,
+      "train_nunique": 57532,
+      "train_std": 43.945759029605384
+    },
+    "PitStop": {
+      "categorical_signal_variance": 0.00037596093146676,
+      "combined_nunique": 2,
+      "dtype": "int64",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_by_value": [
+        {
+          "PitStop": 0,
+          "count": 379365,
+          "mean": 0.1912854375074137
+        },
+        {
+          "PitStop": 1,
+          "count": 59775,
+          "mean": 0.2478293601003764
+        }
+      ],
+      "test_nunique": 2,
+      "train_nunique": 2
+    },
+    "Position": {
+      "categorical_signal_variance": 0.0003456065334590591,
+      "combined_nunique": 20,
+      "dtype": "int64",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_by_value": [
+        {
+          "Position": 20,
+          "count": 5808,
+          "mean": 0.1540977961432507
+        },
+        {
+          "Position": 1,
+          "count": 23841,
+          "mean": 0.15930539826349566
+        },
+        {
+          "Position": 19,
+          "count": 10615,
+          "mean": 0.1689119170984456
+        },
+        {
+          "Position": 4,
+          "count": 25267,
+          "mean": 0.17853326473265524
+        },
+        {
+          "Position": 18,
+          "count": 15869,
+          "mean": 0.18879576532862816
+        },
+        {
+          "Position": 2,
+          "count": 21427,
+          "mean": 0.18994726279927196
+        },
+        {
+          "Position": 6,
+          "count": 24845,
+          "mean": 0.19017911048500705
+        },
+        {
+          "Position": 3,
+          "count": 24285,
+          "mean": 0.19267037265801934
+        },
+        {
+          "Position": 5,
+          "count": 24398,
+          "mean": 0.1928026887449791
+        },
+        {
+          "Position": 7,
+          "count": 24690,
+          "mean": 0.1951397326852977
+        },
+        {
+          "Position": 10,
+          "count": 24700,
+          "mean": 0.1954655870445344
+        },
+        {
+          "Position": 12,
+          "count": 24937,
+          "mean": 0.20046517223402976
+        },
+        {
+          "Position": 11,
+          "count": 25031,
+          "mean": 0.20378730374335824
+        },
+        {
+          "Position": 17,
+          "count": 19886,
+          "mean": 0.20446545308257066
+        },
+        {
+          "Position": 9,
+          "count": 24416,
+          "mean": 0.20650393184796856
+        },
+        {
+          "Position": 8,
+          "count": 24777,
+          "mean": 0.20724865802962425
+        },
+        {
+          "Position": 16,
+          "count": 21769,
+          "mean": 0.21337682024897792
+        },
+        {
+          "Position": 15,
+          "count": 23905,
+          "mean": 0.2198703200167329
+        },
+        {
+          "Position": 14,
+          "count": 23824,
+          "mean": 0.22989422431161854
+        },
+        {
+          "Position": 13,
+          "count": 24850,
+          "mean": 0.2351307847082495
+        }
+      ],
+      "test_nunique": 20,
+      "train_nunique": 20
+    },
+    "Position_Change": {
+      "categorical_signal_variance": 0.010826844761180248,
+      "combined_nunique": 37,
+      "dtype": "float64",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_by_value": [
+        {
+          "Position_Change": -17.0,
+          "count": 63,
+          "mean": 0.2698412698412698
+        },
+        {
+          "Position_Change": -4.0,
+          "count": 15570,
+          "mean": 0.2754656390494541
+        },
+        {
+          "Position_Change": 8.0,
+          "count": 5571,
+          "mean": 0.2760725183988512
+        },
+        {
+          "Position_Change": 12.0,
+          "count": 1299,
+          "mean": 0.2825250192455735
+        },
+        {
+          "Position_Change": -6.0,
+          "count": 9296,
+          "mean": 0.28453098106712565
+        },
+        {
+          "Position_Change": -5.0,
+          "count": 11670,
+          "mean": 0.28817480719794347
+        },
+        {
+          "Position_Change": 15.0,
+          "count": 256,
+          "mean": 0.2890625
+        },
+        {
+          "Position_Change": -2.0,
+          "count": 25475,
+          "mean": 0.29099116781157996
+        },
+        {
+          "Position_Change": 7.0,
+          "count": 8313,
+          "mean": 0.2977264525442079
+        },
+        {
+          "Position_Change": 4.0,
+          "count": 17250,
+          "mean": 0.3096231884057971
+        },
+        {
+          "Position_Change": 9.0,
+          "count": 4186,
+          "mean": 0.3105590062111801
+        },
+        {
+          "Position_Change": 11.0,
+          "count": 1948,
+          "mean": 0.3105749486652977
+        },
+        {
+          "Position_Change": 3.0,
+          "count": 20697,
+          "mean": 0.3152147654249408
+        },
+        {
+          "Position_Change": 5.0,
+          "count": 14410,
+          "mean": 0.31672449687716864
+        },
+        {
+          "Position_Change": 10.0,
+          "count": 2827,
+          "mean": 0.3226034665723382
+        },
+        {
+          "Position_Change": 6.0,
+          "count": 11202,
+          "mean": 0.32806641671130155
+        },
+        {
+          "Position_Change": 18.0,
+          "count": 3,
+          "mean": 0.3333333333333333
+        },
+        {
+          "Position_Change": 13.0,
+          "count": 968,
+          "mean": 0.3646694214876033
+        },
+        {
+          "Position_Change": 14.0,
+          "count": 625,
+          "mean": 0.3888
+        },
+        {
+          "Position_Change": 16.0,
+          "count": 94,
+          "mean": 0.39361702127659576
+        }
+      ],
+      "test_nunique": 37,
+      "train_nunique": 37
+    },
+    "Race": {
+      "categorical_signal_variance": 0.005642418543656574,
+      "combined_nunique": 26,
+      "dtype": "object",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_by_value": [
+        {
+          "Race": "Pre-Season Testing",
+          "count": 22492,
+          "mean": 0.14654099235283657
+        },
+        {
+          "Race": "Abu Dhabi Grand Prix",
+          "count": 16427,
+          "mean": 0.15054483472332136
+        },
+        {
+          "Race": "Canadian Grand Prix",
+          "count": 21416,
+          "mean": 0.1538569293985805
+        },
+        {
+          "Race": "Qatar Grand Prix",
+          "count": 13817,
+          "mean": 0.17558080625316638
+        },
+        {
+          "Race": "Dutch Grand Prix",
+          "count": 24462,
+          "mean": 0.17606900498732728
+        },
+        {
+          "Race": "Australian Grand Prix",
+          "count": 18406,
+          "mean": 0.18157122677387807
+        },
+        {
+          "Race": "Austrian Grand Prix",
+          "count": 21223,
+          "mean": 0.18805069971257599
+        },
+        {
+          "Race": "Japanese Grand Prix",
+          "count": 12891,
+          "mean": 0.20401830734621054
+        },
+        {
+          "Race": "Azerbaijan Grand Prix",
+          "count": 12126,
+          "mean": 0.21458024080488208
+        },
+        {
+          "Race": "Las Vegas Grand Prix",
+          "count": 12479,
+          "mean": 0.22533856879557657
+        },
+        {
+          "Race": "Saudi Arabian Grand Prix",
+          "count": 18111,
+          "mean": 0.22743084313400697
+        },
+        {
+          "Race": "Hungarian Grand Prix",
+          "count": 22481,
+          "mean": 0.2392687158044571
+        },
+        {
+          "Race": "S\u00e3o Paulo Grand Prix",
+          "count": 11497,
+          "mean": 0.2537183613116465
+        },
+        {
+          "Race": "French Grand Prix",
+          "count": 3185,
+          "mean": 0.25745682888540034
+        },
+        {
+          "Race": "Emilia Romagna Grand Prix",
+          "count": 15483,
+          "mean": 0.27255699799780403
+        },
+        {
+          "Race": "Belgian Grand Prix",
+          "count": 9002,
+          "mean": 0.2803821373028216
+        },
+        {
+          "Race": "Bahrain Grand Prix",
+          "count": 19535,
+          "mean": 0.2875351932428974
+        },
+        {
+          "Race": "Spanish Grand Prix",
+          "count": 20483,
+          "mean": 0.3199726602548455
+        },
+        {
+          "Race": "Monaco Grand Prix",
+          "count": 21539,
+          "mean": 0.3573982079019453
+        },
+        {
+          "Race": "Chinese Grand Prix",
+          "count": 7311,
+          "mean": 0.38859253180139514
+        }
+      ],
+      "test_nunique": 26,
+      "train_nunique": 26
+    },
+    "RaceProgress": {
+      "combined_nunique": 2097,
+      "dtype": "float64",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_corr": 0.18547664098197034,
+      "test_mean": 0.33669473812209144,
+      "test_nunique": 1556,
+      "test_std": 0.25339566610485675,
+      "train_mean": 0.33766054335419765,
+      "train_nunique": 1898,
+      "train_std": 0.25327749660919924
+    },
+    "Stint": {
+      "categorical_signal_variance": 0.022130575377771158,
+      "combined_nunique": 8,
+      "dtype": "int64",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_by_value": [
+        {
+          "Stint": 7,
+          "count": 116,
+          "mean": 0.0
+        },
+        {
+          "Stint": 6,
+          "count": 728,
+          "mean": 0.019230769230769232
+        },
+        {
+          "Stint": 8,
+          "count": 50,
+          "mean": 0.02
+        },
+        {
+          "Stint": 5,
+          "count": 4281,
+          "mean": 0.053024994160242936
+        },
+        {
+          "Stint": 1,
+          "count": 216288,
+          "mean": 0.05981839029442225
+        },
+        {
+          "Stint": 4,
+          "count": 18903,
+          "mean": 0.17166587314182935
+        },
+        {
+          "Stint": 3,
+          "count": 69238,
+          "mean": 0.29310494237268553
+        },
+        {
+          "Stint": 2,
+          "count": 129536,
+          "mean": 0.3911036314229249
+        }
+      ],
+      "test_nunique": 8,
+      "train_nunique": 8
+    },
+    "TyreLife": {
+      "combined_nunique": 78,
+      "dtype": "float64",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_corr": 0.273510293766217,
+      "test_mean": 14.160624983392236,
+      "test_nunique": 77,
+      "test_std": 9.852777609594439,
+      "train_mean": 14.158230860317895,
+      "train_nunique": 78,
+      "train_std": 9.801337979199403
+    },
+    "Year": {
+      "categorical_signal_variance": 0.016209572232411137,
+      "combined_nunique": 4,
+      "dtype": "int64",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_by_value": [
+        {
+          "Year": 2023,
+          "count": 136147,
+          "mean": 0.00960726273806988
+        },
+        {
+          "Year": 2022,
+          "count": 82989,
+          "mean": 0.266505199484269
+        },
+        {
+          "Year": 2025,
+          "count": 92894,
+          "mean": 0.2843886580403471
+        },
+        {
+          "Year": 2024,
+          "count": 127110,
+          "mean": 0.2953190150263551
+        }
+      ],
+      "test_nunique": 4,
+      "train_nunique": 4
+    },
+    "id": {
+      "combined_nunique": 627305,
+      "dtype": "int64",
+      "missing_test": 0,
+      "missing_train": 0,
+      "target_corr": -9.660152986931878e-05,
+      "test_mean": 533222.0,
+      "test_nunique": 188165,
+      "test_std": 54318.70103840849,
+      "train_mean": 219569.5,
+      "train_nunique": 439140,
+      "train_std": 126768.94294345126
+    }
+  },
+  "duplicates_excluding_id_target": 0,
+  "target_mean": 0.19898210137996994,
+  "test_duplicates_excluding_id": 0,
+  "test_shape": [
+    188165,
+    15
+  ],
+  "train_shape": [
+    439140,
+    16
+  ]
+}

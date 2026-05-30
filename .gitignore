@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Environments and local secrets
+.env
+.venv/
+venv/
+env/
+
+# Kaggle data and generated artifacts
+data/
+features/
+models/
+experiments/
+submissions/
+*.zip
+*.pkl
+*.pickle
+*.parquet
+*.feather
+
+# Local submission exports
+submission.csv
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
