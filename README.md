@@ -4,12 +4,15 @@ Predicting whether a Formula 1 car is likely to pit on the next lap using race t
 
 ## Results
 
-- **Best recorded AUC:** `0.949135320`
-- **Best model:** Phase 4.5 hard-region specialist ensemble
-- **Metric source:** `experiments/20260519_150804_phase45_hard/summary.json`
-- **OOF prediction source:** `experiments/20260519_150804_phase45_hard/oof_hard.csv`
+| Metric | Value |
+|--------|-------|
+| Competition | Kaggle Playground Series S6E5 — F1 Pit Stop Prediction |
+| Final Rank | 1,406 / 3,022 (top 46%) |
+| Best AUC | 0.9491 |
+| Best Model | Phase 4.5 hard-region specialist ensemble |
+| Dataset Size | 439,140 training rows × 16 features |
 
-This was the strongest usable competition pipeline found in the saved experiment artifacts. Synthetic-forensics reports also contain diagnostic artifact-probe scores, but those were not used here as the final model result.
+Metric source: `experiments/20260519_150804_phase45_hard/summary.json`
 
 ## Key Findings
 

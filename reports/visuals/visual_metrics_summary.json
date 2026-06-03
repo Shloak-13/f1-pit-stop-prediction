@@ -1,8 +1,32 @@
 {
-  "best_model_name": "Phase 4.5 hard-region specialist ensemble",
   "best_auc": 0.9491353202470248,
   "roc_auc_from_oof": 0.9491353202470248,
-  "confusion_matrix_threshold_0_5": [
+  "oof_source": "experiments/20260519_150804_phase45_hard/oof_hard.csv",
+  "summary_source": "experiments/20260519_150804_phase45_hard/summary.json",
+  "feature_importance_source": "experiments/20260518_165505_phase2_cat_fast_stratified/feature_importance_catboost.csv",
+  "compound_rates": [
+    {
+      "Compound": "HARD",
+      "PitNextLap": 0.3275372687927374
+    },
+    {
+      "Compound": "SOFT",
+      "PitNextLap": 0.1934751187280611
+    },
+    {
+      "Compound": "INTERMEDIATE",
+      "PitNextLap": 0.15228397192497986
+    },
+    {
+      "Compound": "MEDIUM",
+      "PitNextLap": 0.10113147138641951
+    },
+    {
+      "Compound": "WET",
+      "PitNextLap": 0.025092250922509225
+    }
+  ],
+  "confusion_matrix_threshold_0_50": [
     [
       330711,
       21048
@@ -11,161 +35,5 @@
       23151,
       64230
     ]
-  ],
-  "feature_importance_source": "experiments/20260518_165505_phase2_cat_fast_stratified/feature_importance_catboost.csv",
-  "top_features": [
-    {
-      "feature": "DeltaBin",
-      "importance": 14.370065489815104
-    },
-    {
-      "feature": "TyreLifeFrac",
-      "importance": 9.04539194092235
-    },
-    {
-      "feature": "StintLapGap",
-      "importance": 7.618889331708568
-    },
-    {
-      "feature": "TyreLifeBin5",
-      "importance": 5.881777182055001
-    },
-    {
-      "feature": "PosChgBin",
-      "importance": 5.682611696707042
-    },
-    {
-      "feature": "RaceLapsEst",
-      "importance": 5.44181999751686
-    },
-    {
-      "feature": "TyreLifeBin3",
-      "importance": 4.755499959325211
-    },
-    {
-      "feature": "CAT__Race__Year__Stint",
-      "importance": 4.397537771775131
-    },
-    {
-      "feature": "PitStop",
-      "importance": 4.384791466453504
-    },
-    {
-      "feature": "CAT__Race__Year__Stint__TyreLifeBin3",
-      "importance": 4.281104155609032
-    },
-    {
-      "feature": "TyreLife",
-      "importance": 4.149325886433995
-    },
-    {
-      "feature": "CAT__Race__Year__Stint__Compound",
-      "importance": 3.348619994632017
-    },
-    {
-      "feature": "CAT__Year__Stint",
-      "importance": 3.2929613041354635
-    },
-    {
-      "feature": "CAT__Year__Stint__Compound",
-      "importance": 3.1312729805717208
-    },
-    {
-      "feature": "Year",
-      "importance": 2.744682107973363
-    }
-  ],
-  "compound_rates": [
-    {
-      "Compound": "HARD",
-      "mean": 0.3275372687927374,
-      "count": 170518
-    },
-    {
-      "Compound": "SOFT",
-      "mean": 0.1934751187280611,
-      "count": 38744
-    },
-    {
-      "Compound": "INTERMEDIATE",
-      "mean": 0.15228397192497986,
-      "count": 17382
-    },
-    {
-      "Compound": "MEDIUM",
-      "mean": 0.10113147138641951,
-      "count": 211141
-    },
-    {
-      "Compound": "WET",
-      "mean": 0.025092250922509225,
-      "count": 1355
-    }
-  ],
-  "stint_rates": [
-    {
-      "Stint": 2,
-      "mean": 0.3911036314229249,
-      "count": 129536
-    },
-    {
-      "Stint": 3,
-      "mean": 0.29310494237268553,
-      "count": 69238
-    },
-    {
-      "Stint": 4,
-      "mean": 0.17166587314182935,
-      "count": 18903
-    },
-    {
-      "Stint": 1,
-      "mean": 0.05981839029442225,
-      "count": 216288
-    },
-    {
-      "Stint": 5,
-      "mean": 0.053024994160242936,
-      "count": 4281
-    },
-    {
-      "Stint": 8,
-      "mean": 0.02,
-      "count": 50
-    },
-    {
-      "Stint": 6,
-      "mean": 0.019230769230769232,
-      "count": 728
-    },
-    {
-      "Stint": 7,
-      "mean": 0.0,
-      "count": 116
-    }
-  ],
-  "year_rates": [
-    {
-      "Year": 2022,
-      "mean": 0.266505199484269,
-      "count": 82989
-    },
-    {
-      "Year": 2023,
-      "mean": 0.00960726273806988,
-      "count": 136147
-    },
-    {
-      "Year": 2024,
-      "mean": 0.2953190150263551,
-      "count": 127110
-    },
-    {
-      "Year": 2025,
-      "mean": 0.2843886580403471,
-      "count": 92894
-    }
-  ],
-  "best_summary_source": "experiments/20260519_150804_phase45_hard/summary.json",
-  "best_oof_source": "experiments/20260519_150804_phase45_hard/oof_hard.csv"
+  ]
 }
