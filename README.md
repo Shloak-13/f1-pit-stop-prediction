@@ -1,81 +1,88 @@
-# Predicting F1 Pit Stops - Kaggle Winning Pipeline
+# F1 Pit Stop Prediction
 
-This workspace is set up as a serious tabular competition lab for the ROC-AUC
-`PitNextLap` objective. It is intentionally broader than a single model: feature
-store, leakage diagnostics, multiple validation regimes, diverse models,
-ensembling, calibration probes, and pseudo-labeling are separated so experiments
-can be iterated without rewriting the stack.
+Predicting whether a Formula 1 car is likely to pit on the next lap using race timing, tyre, stint, and track-position data.
 
-## Data Intelligence Summary
+## Results
 
-Observed from the extracted competition files:
+- **Best recorded AUC:** `0.949135320`
+- **Best model:** Phase 4.5 hard-region specialist ensemble
+- **Metric source:** `experiments/20260519_150804_phase45_hard/summary.json`
+- **OOF prediction source:** `experiments/20260519_150804_phase45_hard/oof_hard.csv`
 
-- Train: `439140 x 16`; test: `188165 x 15`.
-- Target rate: `0.198982`.
-- No missing values and no duplicate feature rows excluding `id`/target.
-- Categorical columns: `Driver`, `Compound`, `Race`.
-- Ordinal/state columns: `Year`, `PitStop`, `Stint`, `Position`.
-- Temporal/progression columns: `LapNumber`, `TyreLife`, `RaceProgress`.
-- Degradation/race-state proxies: `LapTime (s)`, `LapTime_Delta`,
-  `Cumulative_Degradation`, `Position_Change`.
-- `RaceProgress` appears to encode `LapNumber / race_laps`; exact rational
-  artifacts and inferred race length are likely valuable.
-- `Compound` is highly target-informative: HARD has a much higher pit-next-lap
-  rate than MEDIUM, while WET is rare and low-rate.
+This was the strongest usable competition pipeline found in the saved experiment artifacts. Synthetic-forensics reports also contain diagnostic artifact-probe scores, but those were not used here as the final model result.
 
-## Structure
+## Key Findings
 
-- `src/features.py` builds a transductive numeric feature store.
-- `src/diagnostics.py` writes profile, MI, interaction, and optional adversarial
-  drift reports.
-- `src/train.py` runs fold-aware target encoding plus multiple model families.
-- `src/ensemble.py` performs mean/rank/logit and hill-climbing ensembles.
-- `src/pseudo_label.py` creates high-confidence pseudo-labeled train files.
-- `src/make_probe_submissions.py` creates leaderboard calibration variants.
-- `configs/default.json` controls seeds, CV, model list, and calibration variants.
+- **Tyre compound is a major signal.** HARD tyres had a `32.8%` pit-next-lap rate, compared with `10.1%` for MEDIUM tyres and `2.5%` for WET tyres.
+- **Race stint matters.** The second stint was the most pit-heavy section in the training data, with a `39.1%` pit-next-lap rate, while the first stint was only `6.0%`.
+- **Pit decisions are driven by race state, not one variable alone.** The strongest model features included tyre-life progress, lap-to-stint gaps, lap-time delta bins, and race/year/stint interaction patterns.
 
-## Run
+## Visuals
+
+### Feature Importance
+
+![Top 15 feature importances](reports/visuals/feature_importance_top15.png)
+
+### ROC Curve
+
+![ROC curve for best model](reports/visuals/roc_curve_best_model.png)
+
+### Tyre Compound vs Pit Stop Rate
+
+![Pit stop rate by compound](reports/visuals/compound_pit_stop_rate.png)
+
+### Confusion Matrix
+
+![Confusion matrix at threshold 0.50](reports/visuals/confusion_matrix_threshold_050.png)
+
+## Methodology
+
+The project treats pit-stop prediction as a ranking problem: each row represents a race state, and the model estimates how likely that state is to lead to a pit stop on the next lap.
+
+The pipeline builds race-aware features from tyre life, stint progress, lap timing, position changes, compound choice, and race/session groupings. It then compares several model families, including gradient boosting, CatBoost, table-based encoders, local-neighborhood features, specialist models for difficult regions, and rank-based ensembles.
+
+The best saved system came from a hard-region specialist ensemble. It started with a strong Phase 3 race-state model, then applied local corrections only in uncertain regions where the base model and specialist models disagreed.
+
+## How to Run
+
+Place the Kaggle competition files in `data/raw/`:
+
+```text
+data/raw/train.csv
+data/raw/test.csv
+data/raw/sample_submission.csv
+```
+
+Install dependencies:
+
+```powershell
+pip install -r requirements.txt
+```
+
+Run the core pipeline:
 
 ```powershell
 python src/diagnostics.py
 python src/features.py
-python src/train.py --cv stratified --models lgbm,xgb,hist_gbdt,extra_trees,logistic --tag s0
-python src/train.py --cv race --models lgbm,xgb,hist_gbdt --tag race
-python src/ensemble.py --experiments <exp_id_1>,<exp_id_2> --tag final
+python src/train.py --cv stratified --models lgbm,xgb,hist_gbdt --tag baseline
+python src/ensemble.py --experiments <experiment_id> --tag final
 ```
 
-If optional libraries are installed, add `catboost` to the model list. The code
-already includes hooks for CatBoost; Optuna/SHAP/TabNet/FT-Transformer/TabPFN
-are called out as next expansion points because they are not all installed in
-this environment.
+Optional advanced experiments are available in:
 
-## Validation Strategy
+```text
+src/catboost_phase2.py
+src/phase3_neighborhood.py
+src/phase3_specialists.py
+src/phase45_hard_regions.py
+src/validation_realism.py
+```
 
-Run and compare:
+## Skills Demonstrated
 
-- `stratified`: public-LB-like if the split is synthetic/random.
-- `race`: stress-tests race/year generalization.
-- `driver`: tests high-cardinality driver leakage dependence.
-- `stint`: tests within-race stint leakage and temporal robustness.
-
-The goal is not to blindly maximize one CV. Use the public leaderboard to map
-which CV family tracks LB, then ensemble stable high-CV and high-LB families.
-
-## Leaderboard Optimization Playbook
-
-1. Train seed/model/CV families.
-2. Submit one strong single model, one rank ensemble, one logit ensemble, and
-   two temperature variants.
-3. Record public LB beside `experiments/*/summary.json`.
-4. Keep models whose OOF is strong and whose public LB is not redundant.
-5. Use `src/make_probe_submissions.py` for controlled sharpening/smoothing.
-6. Pseudo-label only extreme predictions and compare both stratified and race CV.
-
-## Leakage Search Targets
-
-- `PitStop`, `Stint`, `TyreLife`, and `RaceProgress` threshold rules.
-- Reconstructed race length and lap remaining.
-- Driver/race continuity after sorting by `Year/Race/Driver/LapNumber`.
-- Synthetic fingerprints from `id`, exact `RaceProgress`, and hashed group IDs.
-- Target reconstruction by high-cardinality groups such as
-  `Race-Year-Driver`, `Driver-Compound`, and `Race-Stint`.
+- Python
+- Pandas
+- LightGBM/XGBoost
+- Feature Engineering
+- Ensemble Methods
+- Spatiotemporal Analysis
