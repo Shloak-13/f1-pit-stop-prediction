@@ -1,6 +1,7 @@
 # F1 Pit Stop Prediction
 
 Predicting whether a Formula 1 car is likely to pit on the next lap using race timing, tyre, stint, and track-position data.
+- **Competition rank:** 1,406 / 3,022 — top 46% (Kaggle Playground Series S6E5)
 
 ## Results
 
