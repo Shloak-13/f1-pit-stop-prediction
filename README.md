@@ -81,11 +81,6 @@ src/phase45_hard_regions.py
 src/validation_realism.py
 ```
 
-## Skills Demonstrated
+## Tech Stack
 
-- Python
-- Pandas
-- LightGBM/XGBoost
-- Feature Engineering
-- Ensemble Methods
-- Spatiotemporal Analysis
+Python · Pandas · NumPy · LightGBM · XGBoost · Scikit-learn · Jupyter · PowerShell
